@@ -1,7 +1,7 @@
 # Usage
 
 Just include the app.js file to your project, or just copy+paste the code.
-Set the **data-date** and the **data-language** attributes as in the index.html.
+Set the **data-date**, **data-live** and the **data-language** attributes as in the index.html.
 
 ## data-date
 
