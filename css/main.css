@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    background: #333 url('../img/abstract-art-bark-983200.jpg') no-repeat center center / cover;
+    color: #ccc;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 3rem;
+}
+
+h1,
+h2 {
+    font-weight: 200;
+    margin: 0.4rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 0 5px #000;
+}
+
+.txt-countdown {
+    margin: 0.4rem;
+    text-shadow: 0 0 5px #000;
+    font-size: 1.5rem;
+}
+
+
+@media(min-width: 1200px) {
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+@media(min-width: 800px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+@media(min-width: 500px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+}
