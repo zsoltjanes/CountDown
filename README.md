@@ -18,3 +18,8 @@ Please make sure the order is as follow:
 4. seconds
 
 Example: ["day", "hour", "minute", "seconds"]
+
+## data-live
+Set the live text if the time is expired.
+
+Example: LIVE

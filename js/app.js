@@ -1,6 +1,7 @@
 // Constructor function
-const CountDown = function (date, txtElement, dayText = "day", hourText = "hour", minuteText = "minute", secondsText = "seconds") {
+const CountDown = function (date, live='LIVE', txtElement, dayText = "day", hourText = "hour", minuteText = "minute", secondsText = "seconds") {
     this.date = new Date(date).getTime();
+    this.live = live;
     this.txtElement = txtElement;
     this.day = 0;
     this.hour = 0;
@@ -33,7 +34,7 @@ CountDown.prototype.counter = function () {
 
     if (difference < 0) {
         // Change the counter to Live if its over the set date
-        this.txtElement.innerHTML = "LIVE";
+        this.txtElement.innerHTML = this.live;
     } else {
         // Update every 1 second
         setTimeout(() => this.counter(), 1000);
@@ -52,6 +53,15 @@ function init() {
 
     // Init CountDown if txtElement exists
     if (txtElement !== null) {
+
+        if (txtElement.hasAttribute("data-live")) {
+            // Set the live text
+            var live = txtElement.getAttribute('data-live');
+        } else {
+            // If not set get the error message
+            console.error('No live text set!');
+            return;
+        }
 
         if (txtElement.hasAttribute("data-date")) {
             // Set the date
@@ -77,6 +87,6 @@ function init() {
             return;
         }
 
-        new CountDown(date, txtElement, dayText, hourText, minuteText, secondsText);
+        new CountDown(date, live, txtElement, dayText, hourText, minuteText, secondsText);
     }
 }
